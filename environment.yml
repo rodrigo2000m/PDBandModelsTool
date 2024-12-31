@@ -1,0 +1,11 @@
+name: pdb_models_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - requests
+  - biopython
+  - numpy
+  - pandas
+  - matplotlib
+  - pytest
