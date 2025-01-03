@@ -3,7 +3,7 @@ import argparse
 import os
 # modules
 from fasta_handler import read_fasta
-from downloader import download_AF_models, download_swiss_models, download_pdb_structures
+from downloader import download_AF_models, download_swiss_models, download_pdb_structures, download_esm_atlas_models
 
 def main():
     # comments on the arguments
@@ -48,6 +48,12 @@ def main():
     pdb_dir = os.path.join(outputs_dir, "pdb_structures")
     os.mkdir(pdb_dir)
     download_pdb_structures(pdb_dir, sequences)
+
+    # download ESM Atlas models
+    esm_atlas_dir = os.path.join(outputs_dir, "ESM_Atlas_models")
+    os.mkdir(esm_atlas_dir)
+    download_esm_atlas_models(esm_atlas_dir, fasta_file, sequences)
+
 
 if __name__ == "__main__":
     main()
